@@ -129,23 +129,24 @@ export default function Home() {
       challenges: "Leveraging Go channels and Goroutines for thread-safe live match updates.",
     }
   ];
-
-  const certificates: Certificate[] = [
-    {
-      title: "Complete Web Development Course",
-      issuer: "Programming Hero",
-      date: "2025",
-      credentialUrl: "https://programming-hero.com",
-      skillsLearned: ["MERN Stack", "Redux", "Next.js", "REST APIs"]
-    },
-    {
-      title: "Next.js & Prisma Enterprise Architect",
-      issuer: "Online Verification",
-      date: "2026",
-      credentialUrl: "#",
-      skillsLearned: ["Advanced Routing", "PostgreSQL Optimization", "Neon DB"]
-    }
-  ];
+const certificates: Certificate[] = [
+  {
+    title: "Next Level AI-Driven Software Engineering Bootcamp",
+    issuer: "Programming Hero",
+    date: "2026",
+    
+    credentialUrl: "/certificate.jpg", 
+    skillsLearned: ["Full Stack", "AI Integration", "Cloud Tech"]
+  },
+  {
+    title: "Complete Web Development Course",
+    issuer: "Programming Hero",
+    date: "2025",
+   
+    credentialUrl: "https://programming-hero.com",
+    skillsLearned: ["MERN Stack", "Redux", "Next.js", "REST APIs"]
+  }
+];
 
   const navLinks = [
     { href: "#about", label: ".about()", color: "text-slate-600 hover:text-emerald-600" },
@@ -155,7 +156,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-700 font-sans selection:bg-emerald-500 selection:text-white relative overflow-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-700 font-sans selection:bg-emerald-500 selection:text-white relative">
       
       {/* Background Decorative Light Blur Gradients */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] -z-10"></div>
@@ -240,13 +241,14 @@ export default function Home() {
           </p>
           
           <div className="pt-4 flex flex-wrap items-center gap-6">
-            <a 
-              href="/resume.pdf" 
-              download
-              className="flex items-center gap-2 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white font-mono font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-slate-900/10 transition-all transform hover:-translate-y-0.5 text-xs uppercase tracking-wider"
-            >
-              <FileText className="w-4 h-4 text-emerald-400" /> Download Resume
-            </a>
+           <a 
+  href="https://drive.google.com/uc?export=download&id=1F9A7szCgQCpK1Nk4mquE73ROiCpWdD1o" 
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black text-white font-mono font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-slate-900/10 transition-all transform hover:-translate-y-0.5 text-xs uppercase tracking-wider"
+>
+  <FileText className="w-4 h-4 text-emerald-400" /> Download Resume
+</a>
             
             <div className="flex items-center gap-4">
               <a href="https://github.com/alhaz-431" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-purple-600 hover:text-purple-800 hover:border-purple-300 shadow-sm hover:shadow transition-all" aria-label="GitHub">
@@ -449,56 +451,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Achievements */}
-      <section id="certificates" className="max-w-6xl mx-auto px-6 py-16 border-t border-slate-200">
-        <h3 className="font-mono text-orange-600 font-bold text-xs tracking-widest mb-8 uppercase flex items-center gap-2">
-          <span>05.</span> Verified Achievements
-        </h3>
+     <section id="certificates" className="max-w-6xl mx-auto px-6 py-16 border-t border-slate-200">
+  <h3 className="font-mono text-orange-600 font-bold text-xs tracking-widest mb-8 uppercase flex items-center gap-2">
+    <span>05.</span> Verified Achievements
+  </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {certificates.map((cert, idx) => (
-            <div 
-              key={idx}
-              className="group bg-white border border-slate-200 p-6 rounded-xl hover:shadow-md transition-all flex flex-col justify-between"
-            >
-              <div className="space-y-3">
-                <div className="flex justify-between items-start">
-                  <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600">
-                    <Award className="w-5 h-5" />
-                  </div>
-                  <span className="flex items-center gap-1 text-[10px] font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">
-                    <Calendar className="w-3 h-3 text-orange-500/70" /> {cert.date}
-                  </span>
-                </div>
-
-                <div>
-                  <h4 className="text-base font-bold text-slate-900 group-hover:text-orange-600 transition-colors">{cert.title}</h4>
-                  <p className="text-xs text-slate-500 font-mono mt-0.5">{cert.issuer}</p>
-                </div>
-
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {cert.skillsLearned.map((skill, i) => (
-                    <span key={i} className="text-[9px] font-mono bg-slate-50 text-slate-600 px-2 py-0.5 rounded border border-slate-200">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-200">
-                <a 
-                  href={cert.credentialUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 font-mono text-[11px] py-2.5 rounded-xl border border-slate-200 transition-colors"
-                >
-                  Verify Certificate <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {certificates.map((cert, idx) => (
+      <div 
+        key={idx}
+        className="group bg-white border border-slate-200 p-6 rounded-xl hover:shadow-lg transition-all flex flex-col justify-between hover:border-orange-200"
+      >
+        <div className="space-y-3">
+          <div className="flex justify-between items-start">
+            <div className="w-9 h-9 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600">
+              <Award className="w-5 h-5" />
             </div>
-          ))}
+            <span className="flex items-center gap-1 text-[10px] font-mono text-slate-500 bg-slate-50 px-2 py-1 rounded border border-slate-200">
+              <Calendar className="w-3 h-3 text-orange-500/70" /> {cert.date}
+            </span>
+          </div>
+
+          <div>
+            <h4 className="text-base font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
+              {cert.title}
+            </h4>
+            <p className="text-xs text-slate-500 font-mono mt-0.5">{cert.issuer}</p>
+          </div>
+
+          <div className="flex flex-wrap gap-1.5 pt-2">
+            {cert.skillsLearned.map((skill, i) => (
+              <span key={i} className="text-[9px] font-mono bg-orange-50 text-orange-700 px-2 py-0.5 rounded border border-orange-100">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
-      </section>
+
+        <div className="mt-6 pt-4 border-t border-slate-100">
+          <a 
+            href={cert.credentialUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full inline-flex items-center justify-center gap-1.5 bg-slate-900 hover:bg-orange-600 text-white font-mono text-[11px] py-2.5 rounded-xl transition-all shadow-sm"
+          >
+            View Certificate <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* 8. Contact Section */}
       <section id="contact" className="max-w-6xl mx-auto px-6 py-20 border-t border-slate-200">
